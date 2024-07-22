@@ -1,0 +1,162 @@
+#screen {
+    width: 100%;
+    height: auto;
+    background-color: $bgc3;
+    color: $textColor2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+
+    .pokeWrapper {
+        width: 50%;
+        margin: 0 auto 10px;
+        // margin: 10px;
+        padding: 10px;
+        border-bottom: 3px solid $textColor3;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 64px;
+        }
+
+        .pokeName {
+            button {
+                border: none;
+                background-color: $bgc3;
+            }
+
+            button:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .pokeWrapperInfo {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+        background-color: $bgc2;
+        border: 1px solid $bgc3;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $bgc1;
+            border: 1px solid $textColor2;
+            color: $textColor1;
+            border-radius: 20px;
+            padding: 10px;
+
+            button {
+                border: none;
+                background-color: $bgc1;
+                color: $textColor1;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 1rem;
+            text-decoration: underline;
+            font-weight: normal;
+            margin-bottom: 2px;
+        }
+
+        .pokePic {
+            img {
+                width: 250px;
+            }
+        }
+
+        .pokeSprits {
+
+            // display: flex;
+            // flex-direction: row;
+            .arrg {
+                display: flex;
+                flex-direction: row;
+                border: none;
+
+                span {
+                    margin: 0 5px;
+                }
+            }
+        }
+
+        .pokeMoves {
+
+            .moveListNone {
+                height: 50px;
+                width: 60%;
+                background-color: $bgc3;
+                overflow: hidden;
+            }
+
+            .movesList {
+                width: 60%;
+                background-color: $bgc3;
+                // transition: all 1s ease-in-out;
+
+                .moveRow {
+                    width: 100%;
+                    display: flex;
+                    // flex-direction: row;
+                    // justify-content: space-around;
+                    background-color: $bgc3;
+                    border-radius: 0;
+                    border: none;
+                    margin: 0;
+                    padding: 5px;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-areas:
+                        "name learn method";
+
+                    h4 {
+                        display: inline;
+                    }
+
+                    .moveName {
+                        grid-area: name;
+                    }
+
+                    .moveLearned {
+                        grid-area: learn;
+                    }
+
+                    .moveLearnMethod {
+                        grid-area: method;
+                    }
+
+                    .moveName,
+                    .moveLearned,
+                    .moveLearnMethod {
+                        border: none;
+                        background-color: $bgc3;
+                        color: $textColor2;
+                        border-radius: 0;
+                        border-bottom: 3px solid $bgc1;
+                    }
+                }
+
+            }
+
+        }
+    }
+}

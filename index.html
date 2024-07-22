@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+    <link rel="stylesheet" href="./style/css/main.css">
+    <script src="./app/main.js" type="module" defer async></script>
+    <!-- <script src="app/trying.js" defer async></script> -->
+</head>
+
+<body>
+    <div class="loaderContainer" id="loader">
+        <div class="pokeball"></div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="headLine" id="headLine">
+                <img src="./img/logo.svg" alt="logo" id="logo">
+                <h1>PokeDex</h1>
+            </div>
+            <div class="searchAera">
+                <label for="searchName">Search By Name:</label>
+                <input type="text" id="searchName">
+                <label for="searchName">Search By Number:</label>
+                <input type="number" mix="0" max="1025" id="searchNum">
+                <label for="searchName">Search By Type:</label>
+                <select name="selectType" id="searchType">
+                    <option value="">Grass</option>
+                    <option value="">Fire</option>
+                    <option value="">Water</option>
+                    <option value="">Ice</option>
+                    <option value="">Electric</option>
+                    <option value="">Normal</option>
+                    <option value="">Flying</option>
+                    <option value="">Bug</option>
+                    <option value="">Poison</option>
+                    <option value="">Psychic</option>
+                    <option value="">Ghost</option>
+                    <option value="">Dark</option>
+                    <option value="">Fairy</option>
+                    <option value="">Dragon</option>
+                    <option value="">Fighting</option>
+                    <option value="">Ground</option>
+                    <option value="">Rock</option>
+                    <option value="">Steel</option>
+                </select>
+            </div>
+        </header>
+        <div id="screen">
+            <!-- <div class="pokeWrapper">
+                <div id="pokePic"><img src="https://placehold.co/400x400" alt="pokePic"></div>
+                <div id="pokeName">Bulbasaour</div>
+                <div id="pokeNum">001</div>
+                <div id="pokeType">Grass</div>
+            </div>
+            <div class="pokeWrapper">
+                <div id="pokePic"><img src="https://placehold.co/400x400" alt="pokePic"></div>
+                <div id="pokeName">Bulbasaour</div>
+                <div id="pokeNum">001</div>
+                <div id="pokeType">Grass</div>
+            </div>
+            <div class="pokeWrapper">
+                <div id="pokePic"><img src="https://placehold.co/400x400" alt="pokePic"></div>
+                <div id="pokeName">Bulbasaour</div>
+                <div id="pokeNum">001</div>
+                <div id="pokeType">Grass</div> -->
+            <!-- <div class="pokeWrapperInfo">
+                <div class="pokePic"><img src="https://placehold.co/400x400" alt="pokePic"></div>
+                <div class="pokeName">Bulbasaour</div>
+                <div class="pokeNum">001</div>
+                <div class="PokeWheghiet">1000</div>
+                <div class="pokeType">Grass</div>
+                <div class="pokeStats">Basic Stats: <br>
+                    hp:45 <br>
+                    attack:49 <br>
+                    defense:49 <br>
+                    special-attack:65 <br>
+                    special-defense:65 <br>
+                    speed:45</div>
+                <div class="pokeCries"></div>
+                <div class="pokeSprits">
+                    <h4>Sprites:</h4>
+                    <div class="arrg">
+                        <span>
+                            <h4>Front</h4><img src=${pokemon.sprites.front_default}>
+                        </span>
+                        <span>
+                            <h4>Back</h4><img src=${pokemon.sprites.back_default}>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="pokeMoves">
+                    <h4>Moves</h4>
+                    <div class="movesList">
+                        <div class="moveRow">
+                            <div class="moveName">Name</div>
+                            <div class="moveLearned">Level</div>
+                            <div class="moveLearnMethod">Method</div>
+                        </div>
+                        <div class="moveRow">
+                            <div class="moveName">Sleep-Podwer</div>
+                            <div class="moveLearned">41</div>
+                            <div class="moveLearnMethod">Level Up</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reset"></div>
+            </div> -->
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
