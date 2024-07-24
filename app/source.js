@@ -1,14 +1,3 @@
-// const pokemonArry = [];
-
-// async function fillPokemonArray(arr) {
-//     let newArr = []
-//     for (let i = 1; i <= 1025; i++) {
-//         let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-//         let pokemonData = await response.json();
-//         newArr.push(pokemonData);
-//     }
-//     return arr = JSON.parse(JSON.stringify(newArr))
-// };
 const pokemonArry = [];
 
 async function fillPokemonArray(arr) {
@@ -26,15 +15,6 @@ async function fillPokemonArray(arr) {
 
 let pokemonArr = [...await fillPokemonArray(pokemonArry)]
 let fullPokemonArr = [...pokemonArr]
-
-// let fullPokemonArr = [...fullPokemonArr151, ...fullPokemonArr251, ...fullPokemonArr386, ...fullPokemonArr493, ...fullPokemonArr649]
-// async function start() {
-//     let pokemonArr = [];
-//     pokemonArr = await fillPokemonArray(pokemonArry, 1, 151);
-//     return pokemonArr
-// }
-// fullPokemonArr = [...await start()];
-
 
 
 const searchPokemonName = (text) => {

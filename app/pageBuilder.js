@@ -5,102 +5,6 @@ const headLine = document.getElementById('headLine');
 const sreachInputByName = document.getElementById('searchName');
 const sreachInputByNum = document.getElementById('searchNum');
 const loader = document.getElementById('loader');
-// const searchAera = document.getElementById('searchAera');
-
-// let fullPokemonArr = [];
-// //search bar disable at load.
-// searchAera.style.display = "none"
-// //bulding screen options.
-// const gen1 = document.createElement('div');
-// const btn1 = document.createElement('button');
-// btn1.innerHTML = "Gen 1"
-// btn1.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr151)
-//     searchAera.style.display = "block";
-// })
-// gen1.appendChild(btn1)
-// screen.appendChild(gen1)
-// //bulding screen options.
-// const gen2 = document.createElement('div');
-// const btn2 = document.createElement('button');
-// btn2.innerHTML = "Gen 2"
-// btn2.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr251)
-//     searchAera.style.display = "block";
-// })
-// gen2.appendChild(btn2)
-// screen.appendChild(gen2)
-// //bulding screen options.
-// const gen3 = document.createElement('div');
-// const btn3 = document.createElement('button');
-// btn3.innerHTML = "Gen 3"
-// btn3.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr386)
-//     searchAera.style.display = "block";
-// })
-// gen3.appendChild(btn3)
-// screen.appendChild(gen3)
-// //bulding screen options.
-// const gen4 = document.createElement('div');
-// const btn4 = document.createElement('button');
-// btn4.innerHTML = "Gen 4"
-// btn4.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr493)
-//     searchAera.style.display = "block";
-// })
-// gen4.appendChild(btn4)
-// screen.appendChild(gen4)
-// //bulding screen options.
-// const gen5 = document.createElement('div');
-// const btn5 = document.createElement('button');
-// btn5.innerHTML = "Gen 5"
-// btn5.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr649)
-//     searchAera.style.display = "block";
-// })
-// gen5.appendChild(btn5)
-// screen.appendChild(gen5)
-// // bulding screen options.
-// const gen6 = document.createElement('div');
-// const btn6 = document.createElement('button');
-// btn6.innerHTML = "Gen 6"
-// btn6.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr721)
-//     searchAera.style.display = "block";
-// })
-// gen6.appendChild(btn6)
-// screen.appendChild(gen6)
-// //bulding screen options.
-// const gen7 = document.createElement('div');
-// const btn7 = document.createElement('button');
-// btn7.innerHTML = "Gen 7"
-// btn7.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr809)
-//     searchAera.style.display = "block";
-// })
-// gen7.appendChild(btn7)
-// screen.appendChild(gen7)
-// //bulding screen options.
-// const gen8 = document.createElement('div');
-// const btn8 = document.createElement('button');
-// btn8.innerHTML = "Gen 8"
-// btn8.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr905)
-//     searchAera.style.display = "block";
-// })
-// gen8.appendChild(btn8)
-// screen.appendChild(gen8)
-// //bulding screen options.
-// const gen9 = document.createElement('div');
-// const btn9 = document.createElement('button');
-// btn9.innerHTML = "Gen 9"
-// btn9.addEventListener('click', () => {
-//     listBuilder(fullPokemonArr1025)
-//     searchAera.style.display = "block";
-// })
-// gen9.appendChild(btn9)
-// screen.appendChild(gen9)
-
 
 headLine.addEventListener('click', () => {
     window.location.reload()
@@ -134,12 +38,9 @@ const infoBuilder = (pokemonName) => {
             let dataArr = pokemon.types
             pokeType.innerHTML = `<h4>Type:</h4> ${checkType(dataArr)}`;
             const pokeWrapperInfo = document.createElement('div');
-            const PokeWheghiet = document.createElement('div');
-            PokeWheghiet.className = "PokeWheghiet";
-            PokeWheghiet.innerHTML = "<h4>Weight:</h4>" + pokemon.weight + "<br>" + "<h4>Height:</h4>" + pokemon.height;
             const pokeStats = document.createElement('div');
             pokeStats.className = "pokeStats";
-            pokeStats.innerHTML = `<h4>Basic Stats:</h4> ${pokemon.stats[0].stat.name}:${pokemon.stats[0].base_stat}<br> ${pokemon.stats[1].stat.name}:${pokemon.stats[1].base_stat}<br> ${pokemon.stats[2].stat.name}:${pokemon.stats[2].base_stat}<br> ${pokemon.stats[3].stat.name}:${pokemon.stats[3].base_stat}<br> ${pokemon.stats[4].stat.name}:${pokemon.stats[4].base_stat} <br> ${pokemon.stats[5].stat.name}:${pokemon.stats[5].base_stat}`
+            pokeStats.innerHTML = `<h4>Basic Stats:</h4> ${pokemon.stats[0].stat.name}: <progress value="${pokemon.stats[0].base_stat}" max="255"></progress> ${pokemon.stats[1].stat.name}:<progress value="${pokemon.stats[1].base_stat}" max="255"></progress> ${pokemon.stats[2].stat.name}:<progress value="${pokemon.stats[2].base_stat}" max="255"></progress> ${pokemon.stats[3].stat.name}:<progress value="${pokemon.stats[3].base_stat}" max="255"></progress> ${pokemon.stats[4].stat.name}:<progress value="${pokemon.stats[4].base_stat}" max="255"></progress> ${pokemon.stats[5].stat.name}:<progress value="${pokemon.stats[5].base_stat}" max="255"></progress>`
             const pokeCries = document.createElement('div');
             pokeCries.className = "pokeCries";
             pokeCries.innerHTML = `<audio controls src=${pokemon.cries.latest}></audio>`
@@ -151,10 +52,11 @@ const infoBuilder = (pokemonName) => {
             const pokeMoves = document.createElement('div');
             pokeMoves.className = "pokeMoves";
             const moveList = document.createElement('div');
-            moveList.className = "moveListNone";
-            moveList.addEventListener('click', () => {
-                changeDisability(moveList);
-            })
+            moveList.className = "movesList";
+            // moveList.className = "moveListNone";
+            // moveList.addEventListener('click', () => {
+            //     changeDisability(moveList);
+            // })
 
             // moveList.className = "movesList";
 
@@ -172,7 +74,7 @@ const infoBuilder = (pokemonName) => {
                                       <div class="moveLearnMethod"><h4>Method</h4></div>`
             moveList.appendChild(firstMoveRow);
             let pokemonMoves = pokemon.moves;
-            console.log(pokemonMoves);
+            pokemonMoves.sort();
             pokemonMoves.forEach((skill) => {
                 const moveRow = document.createElement('div');
                 moveRow.className = "moveRow";
@@ -210,7 +112,6 @@ const infoBuilder = (pokemonName) => {
             pokeWrapperInfo.appendChild(pokePic);
             pokeWrapperInfo.appendChild(pokeNum);
             pokeWrapperInfo.appendChild(pokeType);
-            pokeWrapperInfo.appendChild(PokeWheghiet)
             pokeWrapperInfo.appendChild(pokeStats);
             pokeWrapperInfo.appendChild(pokeCries);
             pokeWrapperInfo.appendChild(pokeSprits);
