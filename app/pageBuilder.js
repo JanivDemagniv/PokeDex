@@ -54,11 +54,11 @@ const infoBuilder = (pokemonName) => {
             const pokeMoves = document.createElement('div');
             pokeMoves.className = "pokeMoves";
             const moveList = document.createElement('div');
-            moveList.className = "movesList";
-            // moveList.className = "moveListNone";
-            // moveList.addEventListener('click', () => {
-            //     changeDisability(moveList);
-            // })
+            // moveList.className = "movesList";
+            moveList.className = "moveListNone";
+            moveList.addEventListener('click', () => {
+                changeDisability(moveList);
+            })
 
             // moveList.className = "movesList";
 
@@ -223,10 +223,10 @@ const loaderPage = () => {
 }
 
 const changeDisability = (element) => {
-    if (element.className === "movesList") {
-        element.className = "moveListNone";
+    if (element.className === "moveListNone") {
+        element.className = "movesList";
     } else {
-        element.className = "movesList"
+        element.className = "moveListNone"
     }
 }
 
