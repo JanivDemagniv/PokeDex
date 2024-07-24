@@ -100,6 +100,7 @@
         }
 
         .pokeMoves {
+            transition: all 2s ease-in-out;
 
             .moveListNone {
                 height: 50px;
@@ -111,7 +112,6 @@
             .movesList {
                 width: 60%;
                 background-color: $bgc3;
-                // transition: all 1s ease-in-out;
 
                 .moveRow {
                     width: 100%;
