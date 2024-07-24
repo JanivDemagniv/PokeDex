@@ -196,6 +196,9 @@ header .searchAera input {
 #screen .pokeWrapperInfo .pokeSprits .arrg span {
   margin: 0 5px;
 }
+#screen .pokeWrapperInfo .pokeMoves {
+  transition: all 2s ease-in-out;
+}
 #screen .pokeWrapperInfo .pokeMoves .moveListNone {
   height: 50px;
   width: 60%;
@@ -515,5 +518,8 @@ header .searchAera input {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+  .container #screen .pokeWrapperInfo .movesList {
+    width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */
