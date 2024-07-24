@@ -1,105 +1,105 @@
-import { reset, searchPokemonName, searchPokemonNum, fullPokemonArr151, fullPokemonArr251, fullPokemonArr386, fullPokemonArr493, fullPokemonArr649, fullPokemonArr721, fullPokemonArr809, fullPokemonArr905, fullPokemonArr1025 } from "./source.js";
+import { reset, searchPokemonName, searchPokemonNum, fullPokemonArr } from "./source.js";
 
 const screen = document.getElementById('screen');
 const headLine = document.getElementById('headLine');
 const sreachInputByName = document.getElementById('searchName');
 const sreachInputByNum = document.getElementById('searchNum');
 const loader = document.getElementById('loader');
-const searchAera = document.getElementById('searchAera');
+// const searchAera = document.getElementById('searchAera');
 
-let fullPokemonArr = [];
-//search bar disable at load.
-searchAera.style.display = "none"
-//bulding screen options.
-const gen1 = document.createElement('div');
-const btn1 = document.createElement('button');
-btn1.innerHTML = "Gen 1"
-btn1.addEventListener('click', () => {
-    listBuilder(fullPokemonArr151)
-    searchAera.style.display = "block";
-})
-gen1.appendChild(btn1)
-screen.appendChild(gen1)
-//bulding screen options.
-const gen2 = document.createElement('div');
-const btn2 = document.createElement('button');
-btn2.innerHTML = "Gen 2"
-btn2.addEventListener('click', () => {
-    listBuilder(fullPokemonArr251)
-    searchAera.style.display = "block";
-})
-gen2.appendChild(btn2)
-screen.appendChild(gen2)
-//bulding screen options.
-const gen3 = document.createElement('div');
-const btn3 = document.createElement('button');
-btn3.innerHTML = "Gen 3"
-btn3.addEventListener('click', () => {
-    listBuilder(fullPokemonArr386)
-    searchAera.style.display = "block";
-})
-gen3.appendChild(btn3)
-screen.appendChild(gen3)
-//bulding screen options.
-const gen4 = document.createElement('div');
-const btn4 = document.createElement('button');
-btn4.innerHTML = "Gen 4"
-btn4.addEventListener('click', () => {
-    listBuilder(fullPokemonArr493)
-    searchAera.style.display = "block";
-})
-gen4.appendChild(btn4)
-screen.appendChild(gen4)
-//bulding screen options.
-const gen5 = document.createElement('div');
-const btn5 = document.createElement('button');
-btn5.innerHTML = "Gen 5"
-btn5.addEventListener('click', () => {
-    listBuilder(fullPokemonArr649)
-    searchAera.style.display = "block";
-})
-gen5.appendChild(btn5)
-screen.appendChild(gen5)
-// bulding screen options.
-const gen6 = document.createElement('div');
-const btn6 = document.createElement('button');
-btn6.innerHTML = "Gen 6"
-btn6.addEventListener('click', () => {
-    listBuilder(fullPokemonArr721)
-    searchAera.style.display = "block";
-})
-gen6.appendChild(btn6)
-screen.appendChild(gen6)
-//bulding screen options.
-const gen7 = document.createElement('div');
-const btn7 = document.createElement('button');
-btn7.innerHTML = "Gen 7"
-btn7.addEventListener('click', () => {
-    listBuilder(fullPokemonArr809)
-    searchAera.style.display = "block";
-})
-gen7.appendChild(btn7)
-screen.appendChild(gen7)
-//bulding screen options.
-const gen8 = document.createElement('div');
-const btn8 = document.createElement('button');
-btn8.innerHTML = "Gen 8"
-btn8.addEventListener('click', () => {
-    listBuilder(fullPokemonArr905)
-    searchAera.style.display = "block";
-})
-gen8.appendChild(btn8)
-screen.appendChild(gen8)
-//bulding screen options.
-const gen9 = document.createElement('div');
-const btn9 = document.createElement('button');
-btn9.innerHTML = "Gen 9"
-btn9.addEventListener('click', () => {
-    listBuilder(fullPokemonArr1025)
-    searchAera.style.display = "block";
-})
-gen9.appendChild(btn9)
-screen.appendChild(gen9)
+// let fullPokemonArr = [];
+// //search bar disable at load.
+// searchAera.style.display = "none"
+// //bulding screen options.
+// const gen1 = document.createElement('div');
+// const btn1 = document.createElement('button');
+// btn1.innerHTML = "Gen 1"
+// btn1.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr151)
+//     searchAera.style.display = "block";
+// })
+// gen1.appendChild(btn1)
+// screen.appendChild(gen1)
+// //bulding screen options.
+// const gen2 = document.createElement('div');
+// const btn2 = document.createElement('button');
+// btn2.innerHTML = "Gen 2"
+// btn2.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr251)
+//     searchAera.style.display = "block";
+// })
+// gen2.appendChild(btn2)
+// screen.appendChild(gen2)
+// //bulding screen options.
+// const gen3 = document.createElement('div');
+// const btn3 = document.createElement('button');
+// btn3.innerHTML = "Gen 3"
+// btn3.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr386)
+//     searchAera.style.display = "block";
+// })
+// gen3.appendChild(btn3)
+// screen.appendChild(gen3)
+// //bulding screen options.
+// const gen4 = document.createElement('div');
+// const btn4 = document.createElement('button');
+// btn4.innerHTML = "Gen 4"
+// btn4.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr493)
+//     searchAera.style.display = "block";
+// })
+// gen4.appendChild(btn4)
+// screen.appendChild(gen4)
+// //bulding screen options.
+// const gen5 = document.createElement('div');
+// const btn5 = document.createElement('button');
+// btn5.innerHTML = "Gen 5"
+// btn5.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr649)
+//     searchAera.style.display = "block";
+// })
+// gen5.appendChild(btn5)
+// screen.appendChild(gen5)
+// // bulding screen options.
+// const gen6 = document.createElement('div');
+// const btn6 = document.createElement('button');
+// btn6.innerHTML = "Gen 6"
+// btn6.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr721)
+//     searchAera.style.display = "block";
+// })
+// gen6.appendChild(btn6)
+// screen.appendChild(gen6)
+// //bulding screen options.
+// const gen7 = document.createElement('div');
+// const btn7 = document.createElement('button');
+// btn7.innerHTML = "Gen 7"
+// btn7.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr809)
+//     searchAera.style.display = "block";
+// })
+// gen7.appendChild(btn7)
+// screen.appendChild(gen7)
+// //bulding screen options.
+// const gen8 = document.createElement('div');
+// const btn8 = document.createElement('button');
+// btn8.innerHTML = "Gen 8"
+// btn8.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr905)
+//     searchAera.style.display = "block";
+// })
+// gen8.appendChild(btn8)
+// screen.appendChild(gen8)
+// //bulding screen options.
+// const gen9 = document.createElement('div');
+// const btn9 = document.createElement('button');
+// btn9.innerHTML = "Gen 9"
+// btn9.addEventListener('click', () => {
+//     listBuilder(fullPokemonArr1025)
+//     searchAera.style.display = "block";
+// })
+// gen9.appendChild(btn9)
+// screen.appendChild(gen9)
 
 
 headLine.addEventListener('click', () => {
@@ -256,7 +256,7 @@ const rowBuilder = (pokemon) => {
 
 }
 
-const listBuilder = (arr) => {
+const listBuilder = () => {
     screen.innerHTML = "";
     const pokeWrapper = document.createElement('div');
     pokeWrapper.className = "pokeWrapper";
@@ -278,7 +278,7 @@ const listBuilder = (arr) => {
     pokeWrapper.appendChild(pokeNum);
     pokeWrapper.appendChild(pokeType);
     screen.appendChild(pokeWrapper)
-    for (const pokemon of arr) {
+    for (const pokemon of fullPokemonArr) {
         rowBuilder(pokemon);
     }
 }
