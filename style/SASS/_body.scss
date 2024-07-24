@@ -100,18 +100,25 @@
         }
 
         .pokeMoves {
-            transition: all 2s ease-in-out;
+            transition: all 0.5s ease-in-out;
 
             .moveListNone {
-                height: 50px;
-                width: 60%;
+                height: 20px;
+                width: 80%;
                 background-color: $bgc3;
                 overflow: hidden;
+                opacity: 0.2;
+                transition: all 2s ease-in-out;
+
+                ::after {
+                    background: $bgc3;
+                }
             }
 
             .movesList {
-                width: 60%;
+                width: 80%;
                 background-color: $bgc3;
+                transition: all 2s ease-in-out;
 
                 .moveRow {
                     width: 100%;
