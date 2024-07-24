@@ -33,9 +33,23 @@ const searchPokemonNum = (num) => {
     })
 }
 
+const searchPokemonType = (type) => {
+    fullPokemonArr = fullPokemonArr.filter((pokemon) => {
+        if (pokemon.types.length == 2) {
+            if (pokemon.types[0].type.name == type || pokemon.types[1].type.name == type) {
+                return pokemon;
+            }
+        } else if (pokemon.types.length == 1) {
+            if (pokemon.types[0].type.name == type) {
+                return pokemon
+            }
+        }
+    })
+}
+
 const reset = () => {
     fullPokemonArr = [...pokemonArr];
 }
 
-export { fullPokemonArr, reset, searchPokemonName, searchPokemonNum }
+export { fullPokemonArr, reset, searchPokemonName, searchPokemonNum, searchPokemonType }
 

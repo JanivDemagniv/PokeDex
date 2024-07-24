@@ -1,10 +1,12 @@
-import { reset, searchPokemonName, searchPokemonNum, fullPokemonArr } from "./source.js";
+import { reset, searchPokemonName, searchPokemonNum, fullPokemonArr, searchPokemonType } from "./source.js";
 
 const screen = document.getElementById('screen');
 const headLine = document.getElementById('headLine');
 const sreachInputByName = document.getElementById('searchName');
 const sreachInputByNum = document.getElementById('searchNum');
 const loader = document.getElementById('loader');
+const selectType = document.getElementById('searchType');
+
 
 headLine.addEventListener('click', () => {
     window.location.reload()
@@ -205,6 +207,14 @@ sreachInputByNum.addEventListener('keydown', (event) => {
     screen.innerHTML = "";
     reset();
     searchPokemonNum(event.target.value);
+    listBuilder();
+});
+
+selectType.addEventListener('change', () => {
+    screen.innerHTML = "";
+    reset();
+    // console.log(selectType.value);
+    searchPokemonType(selectType.value);
     listBuilder();
 })
 
