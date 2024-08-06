@@ -42,7 +42,7 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "pic pic pic name num type" "pic pic pic wheight stats stats" "cries sprits sprits sprits sprits sprits" "moves moves moves moves moves moves" "reset reset reset reset reset reset";
+  grid-template-areas: "pic pic pic name num type" "pic pic pic stats stats stats" "cries sprits sprits sprits sprits sprits" "moves moves moves moves moves moves" "reset reset reset reset reset reset";
 }
 .container #screen .pokeWrapperInfo .pokePic {
   grid-area: pic;
@@ -196,15 +196,24 @@ header .searchAera input {
 #screen .pokeWrapperInfo .pokeSprits .arrg span {
   margin: 0 5px;
 }
+#screen .pokeWrapperInfo .pokeMoves {
+  transition: all 0.5s ease-in-out;
+}
 #screen .pokeWrapperInfo .pokeMoves .moveListNone {
-  height: 50px;
-  width: 60%;
+  height: 20px;
+  width: 80%;
   background-color: #e3e3e3;
   overflow: hidden;
+  opacity: 0.2;
+  transition: all 2s ease-in-out;
+}
+#screen .pokeWrapperInfo .pokeMoves .moveListNone ::after {
+  background: #e3e3e3;
 }
 #screen .pokeWrapperInfo .pokeMoves .movesList {
-  width: 60%;
+  width: 80%;
   background-color: #e3e3e3;
+  transition: all 2s ease-in-out;
 }
 #screen .pokeWrapperInfo .pokeMoves .movesList .moveRow {
   width: 100%;
@@ -518,5 +527,6 @@ header .searchAera input {
   }
   .container #screen .pokeWrapperInfo .movesList {
     width: 100%;
+    font-size: 0.7rem;
   }
 }/*# sourceMappingURL=main.css.map */

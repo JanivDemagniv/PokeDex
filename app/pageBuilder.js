@@ -1,10 +1,12 @@
-import { fullPokemonArr, reset, searchPokemonName, searchPokemonNum } from "./source.js";
+import { reset, searchPokemonName, searchPokemonNum, fullPokemonArr, searchPokemonType } from "./source.js";
 
 const screen = document.getElementById('screen');
 const headLine = document.getElementById('headLine');
 const sreachInputByName = document.getElementById('searchName');
 const sreachInputByNum = document.getElementById('searchNum');
 const loader = document.getElementById('loader');
+const selectType = document.getElementById('searchType');
+
 
 headLine.addEventListener('click', () => {
     window.location.reload()
@@ -19,7 +21,7 @@ function makeThreeDigitNumber(num) {
 };
 
 const infoBuilder = (pokemonName) => {
-    let data = fullPokemonArr.filter((pokemon) => {
+    fullPokemonArr.filter((pokemon) => {
         if (pokemon.name === pokemonName) {
             screen.innerHTML = "";
             const pokeName2 = document.createElement('div');
@@ -38,12 +40,9 @@ const infoBuilder = (pokemonName) => {
             let dataArr = pokemon.types
             pokeType.innerHTML = `<h4>Type:</h4> ${checkType(dataArr)}`;
             const pokeWrapperInfo = document.createElement('div');
-            const PokeWheghiet = document.createElement('div');
-            PokeWheghiet.className = "PokeWheghiet";
-            PokeWheghiet.innerHTML = "<h4>Weight:</h4>" + pokemon.weight + "<br>" + "<h4>Height:</h4>" + pokemon.height;
             const pokeStats = document.createElement('div');
             pokeStats.className = "pokeStats";
-            pokeStats.innerHTML = `<h4>Basic Stats:</h4> ${pokemon.stats[0].stat.name}:${pokemon.stats[0].base_stat}<br> ${pokemon.stats[1].stat.name}:${pokemon.stats[1].base_stat}<br> ${pokemon.stats[2].stat.name}:${pokemon.stats[2].base_stat}<br> ${pokemon.stats[3].stat.name}:${pokemon.stats[3].base_stat}<br> ${pokemon.stats[4].stat.name}:${pokemon.stats[4].base_stat} <br> ${pokemon.stats[5].stat.name}:${pokemon.stats[5].base_stat}`
+            pokeStats.innerHTML = `<h4>Basic Stats:</h4> ${pokemon.stats[0].stat.name}: <progress value="${pokemon.stats[0].base_stat}" max="255"></progress> ${pokemon.stats[1].stat.name}:<progress value="${pokemon.stats[1].base_stat}" max="255"></progress> ${pokemon.stats[2].stat.name}:<progress value="${pokemon.stats[2].base_stat}" max="255"></progress> ${pokemon.stats[3].stat.name}:<progress value="${pokemon.stats[3].base_stat}" max="255"></progress> ${pokemon.stats[4].stat.name}:<progress value="${pokemon.stats[4].base_stat}" max="255"></progress> ${pokemon.stats[5].stat.name}:<progress value="${pokemon.stats[5].base_stat}" max="255"></progress>`
             const pokeCries = document.createElement('div');
             pokeCries.className = "pokeCries";
             pokeCries.innerHTML = `<audio controls src=${pokemon.cries.latest}></audio>`
@@ -55,6 +54,7 @@ const infoBuilder = (pokemonName) => {
             const pokeMoves = document.createElement('div');
             pokeMoves.className = "pokeMoves";
             const moveList = document.createElement('div');
+            // moveList.className = "movesList";
             moveList.className = "moveListNone";
             moveList.addEventListener('click', () => {
                 changeDisability(moveList);
@@ -76,7 +76,7 @@ const infoBuilder = (pokemonName) => {
                                       <div class="moveLearnMethod"><h4>Method</h4></div>`
             moveList.appendChild(firstMoveRow);
             let pokemonMoves = pokemon.moves;
-            console.log(pokemonMoves);
+            pokemonMoves.sort();
             pokemonMoves.forEach((skill) => {
                 const moveRow = document.createElement('div');
                 moveRow.className = "moveRow";
@@ -114,7 +114,6 @@ const infoBuilder = (pokemonName) => {
             pokeWrapperInfo.appendChild(pokePic);
             pokeWrapperInfo.appendChild(pokeNum);
             pokeWrapperInfo.appendChild(pokeType);
-            pokeWrapperInfo.appendChild(PokeWheghiet)
             pokeWrapperInfo.appendChild(pokeStats);
             pokeWrapperInfo.appendChild(pokeCries);
             pokeWrapperInfo.appendChild(pokeSprits);
@@ -209,6 +208,14 @@ sreachInputByNum.addEventListener('keydown', (event) => {
     reset();
     searchPokemonNum(event.target.value);
     listBuilder();
+});
+
+selectType.addEventListener('change', () => {
+    screen.innerHTML = "";
+    reset();
+    // console.log(selectType.value);
+    searchPokemonType(selectType.value);
+    listBuilder();
 })
 
 const loaderPage = () => {
@@ -216,10 +223,10 @@ const loaderPage = () => {
 }
 
 const changeDisability = (element) => {
-    if (element.className === "movesList") {
-        element.className = "moveListNone";
+    if (element.className === "moveListNone") {
+        element.className = "movesList";
     } else {
-        element.className = "movesList"
+        element.className = "moveListNone"
     }
 }
 
