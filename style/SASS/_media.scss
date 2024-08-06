@@ -44,6 +44,10 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
+
+                .movesList {
+                    width: 100%;
+                }
             }
         }
     }
