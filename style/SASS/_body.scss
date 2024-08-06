@@ -5,14 +5,23 @@
     color: $textColor2;
     display: flex;
     flex-direction: column;
-    border-radius: 25px;
+    border-radius: 10px;
 
     .pokeWrapper {
+        background-color: #cdcdcd;
         width: 50%;
-        margin: 0 auto 10px;
+        margin: 10px auto 10px;
+        border-radius: 10px;
+        // border-top-left-radius: 10px;
         // margin: 10px;
         padding: 10px;
         border-bottom: 3px solid $textColor3;
+        // box-shadow: 0 0 5px $shdow1;
+        transition: all ease-in-out 0.5s;
+
+        &:hover {
+            background-color: #e3e2e2;
+        }
 
         div {
             display: flex;
@@ -95,71 +104,6 @@
 
                 span {
                     margin: 0 5px;
-                }
-            }
-        }
-
-        .pokeMoves {
-            transition: all 0.5s ease-in-out;
-
-            .moveListNone {
-                height: 20px;
-                width: 80%;
-                background-color: $bgc3;
-                overflow: hidden;
-                opacity: 0.2;
-                transition: all 2s ease-in-out;
-
-                ::after {
-                    background: $bgc3;
-                }
-            }
-
-            .movesList {
-                width: 80%;
-                background-color: $bgc3;
-                transition: all 2s ease-in-out;
-
-                .moveRow {
-                    width: 100%;
-                    display: flex;
-                    // flex-direction: row;
-                    // justify-content: space-around;
-                    background-color: $bgc3;
-                    border-radius: 0;
-                    border: none;
-                    margin: 0;
-                    padding: 5px;
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-areas:
-                        "name learn method";
-
-                    h4 {
-                        display: inline;
-                    }
-
-                    .moveName {
-                        grid-area: name;
-                    }
-
-                    .moveLearned {
-                        grid-area: learn;
-                    }
-
-                    .moveLearnMethod {
-                        grid-area: method;
-                    }
-
-                    .moveName,
-                    .moveLearned,
-                    .moveLearnMethod {
-                        border: none;
-                        background-color: $bgc3;
-                        color: $textColor2;
-                        border-radius: 0;
-                        border-bottom: 3px solid $bgc1;
-                    }
                 }
 
             }

@@ -83,8 +83,9 @@ header {
   width: 100%;
 }
 header .headLine {
-  background-color: #960000;
-  border-radius: 25px;
+  background: rgb(150, 0, 0);
+  background: linear-gradient(11deg, rgb(150, 0, 0) 0%, rgb(45, 0, 0) 100%);
+  border-radius: 10px;
   box-shadow: 0 0 10px #470000;
   display: flex;
   justify-content: center;
@@ -107,7 +108,7 @@ header .searchAera {
   background-color: #e3e3e3;
   color: #161616;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 0 10px #470000;
   display: flex;
   justify-content: center;
@@ -125,13 +126,19 @@ header .searchAera input {
   color: #161616;
   display: flex;
   flex-direction: column;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 #screen .pokeWrapper {
+  background-color: #cdcdcd;
   width: 50%;
-  margin: 0 auto 10px;
+  margin: 10px auto 10px;
+  border-radius: 10px;
   padding: 10px;
   border-bottom: 3px solid #d90000;
+  transition: all ease-in-out 0.5s;
+}
+#screen .pokeWrapper:hover {
+  background-color: #e3e2e2;
 }
 #screen .pokeWrapper div {
   display: flex;
@@ -195,58 +202,6 @@ header .searchAera input {
 }
 #screen .pokeWrapperInfo .pokeSprits .arrg span {
   margin: 0 5px;
-}
-#screen .pokeWrapperInfo .pokeMoves {
-  transition: all 0.5s ease-in-out;
-}
-#screen .pokeWrapperInfo .pokeMoves .moveListNone {
-  height: 20px;
-  width: 80%;
-  background-color: #e3e3e3;
-  overflow: hidden;
-  opacity: 0.2;
-  transition: all 2s ease-in-out;
-}
-#screen .pokeWrapperInfo .pokeMoves .moveListNone ::after {
-  background: #e3e3e3;
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList {
-  width: 80%;
-  background-color: #e3e3e3;
-  transition: all 2s ease-in-out;
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow {
-  width: 100%;
-  display: flex;
-  background-color: #e3e3e3;
-  border-radius: 0;
-  border: none;
-  margin: 0;
-  padding: 5px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "name learn method";
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow h4 {
-  display: inline;
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow .moveName {
-  grid-area: name;
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow .moveLearned {
-  grid-area: learn;
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow .moveLearnMethod {
-  grid-area: method;
-}
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow .moveName,
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow .moveLearned,
-#screen .pokeWrapperInfo .pokeMoves .movesList .moveRow .moveLearnMethod {
-  border: none;
-  background-color: #e3e3e3;
-  color: #161616;
-  border-radius: 0;
-  border-bottom: 3px solid #960000;
 }
 
 .loaderContainer {
@@ -516,6 +471,10 @@ header .searchAera input {
     height: 70px;
     flex-wrap: wrap;
     height: auto;
+  }
+  .container header #searchNum {
+    display: block;
+    width: 120px;
   }
   .container #screen .pokeWrapper {
     width: 100%;

@@ -51,53 +51,6 @@ const infoBuilder = (pokemonName) => {
             pokeSprits.innerHTML = `<h4>Sprites:</h4>
                     <div class="arrg"><span><h4>Front</h4><img src=${pokemon.sprites.front_default}></span>
                 <span><h4>Back</h4><img src=${pokemon.sprites.back_default}></span></div>`
-            const pokeMoves = document.createElement('div');
-            pokeMoves.className = "pokeMoves";
-            const moveList = document.createElement('div');
-            // moveList.className = "movesList";
-            moveList.className = "moveListNone";
-            moveList.addEventListener('click', () => {
-                changeDisability(moveList);
-            })
-
-            // moveList.className = "movesList";
-
-            const movesHeadline = document.createElement('h4');
-            movesHeadline.innerText = "Moves";
-
-            pokeMoves.appendChild(movesHeadline)
-
-            pokeMoves.appendChild(moveList);
-
-            const firstMoveRow = document.createElement('div');
-            firstMoveRow.className = "moveRow"
-            firstMoveRow.innerHTML = `<div class="moveName"><h4>Name</h4></div>
-                                      <div class="moveLearned"><h4>Level</h4></div>
-                                      <div class="moveLearnMethod"><h4>Method</h4></div>`
-            moveList.appendChild(firstMoveRow);
-            let pokemonMoves = pokemon.moves;
-            pokemonMoves.sort();
-            pokemonMoves.forEach((skill) => {
-                const moveRow = document.createElement('div');
-                moveRow.className = "moveRow";
-
-                const moveName = document.createElement('div');
-                moveName.className = "moveName";
-                moveName.innerText = skill.move.name;
-
-                const moveLearned = document.createElement('div');
-                moveLearned.className = "moveLearned";
-                moveLearned.innerText = skill.version_group_details[0].level_learned_at;
-
-                const moveMethod = document.createElement('div');
-                moveMethod.className = "moveLearnMethod";
-                moveMethod.innerText = skill.version_group_details[0].move_learn_method.name;
-
-                moveRow.appendChild(moveName);
-                moveRow.appendChild(moveLearned);
-                moveRow.appendChild(moveMethod);
-                moveList.appendChild(moveRow);
-            })
 
             const reset = document.createElement('div')
             reset.className = "reset";
@@ -117,7 +70,6 @@ const infoBuilder = (pokemonName) => {
             pokeWrapperInfo.appendChild(pokeStats);
             pokeWrapperInfo.appendChild(pokeCries);
             pokeWrapperInfo.appendChild(pokeSprits);
-            pokeWrapperInfo.appendChild(pokeMoves);
             pokeWrapperInfo.appendChild(reset)
             screen.appendChild(pokeWrapperInfo);
         }

@@ -3,8 +3,9 @@ header {
     width: 100%;
 
     .headLine {
-        background-color: $bgc1;
-        border-radius: 25px;
+        background: rgb(150, 0, 0);
+        background: linear-gradient(11deg, rgba(150, 0, 0, 1) 0%, rgba(45, 0, 0, 1) 100%);
+        border-radius: 10px;
         box-shadow: 0 0 10px $shdow1;
         display: flex;
         justify-content: center;
@@ -33,7 +34,7 @@ header {
         background-color: $bgc3;
         color: $textColor2;
         height: 40px;
-        border-radius: 10px;
+        border-radius: 5px;
         box-shadow: 0 0 10px $shdow1;
         display: flex;
         justify-content: center;
