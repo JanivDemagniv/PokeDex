@@ -1,7 +1,8 @@
 import { listBuilder, loaderPage } from "./pageBuilder.js";
-import { fullPokemonArr } from "./source.js";
+
 
 listBuilder()
-console.log(fullPokemonArr);
 
+
+listBuilder();
 window.addEventListener('load', loaderPage())

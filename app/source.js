@@ -5,30 +5,12 @@ async function fillPokemonArray(arr) {
     let requests = [];
 
     for (let i = 1; i <= 1025; i++) {
-        requests.push(
-            fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .catch(error => {
-                    console.error(`Failed to fetch data for Pokémon ID ${i}:`, error);
-                    return null; // Return null or some default value in case of an error
-                })
-        );
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+        let pokemonData = await response.json();
+        newArr.push(pokemonData);
     }
-
-    try {
-        newArr = await Promise.all(requests);
-        newArr = newArr.filter(item => item !== null); // Filter out any failed requests
-    } catch (error) {
-        console.error('Error during Promise.all:', error);
-    }
-
-    return arr = JSON.parse(JSON.stringify(newArr));
-}
+    return arr = JSON.parse(JSON.stringify(newArr))
+};
 
 let pokemonArr = [...await fillPokemonArray(pokemonArry)]
 let fullPokemonArr = [...pokemonArr]
