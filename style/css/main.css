@@ -151,7 +151,7 @@ header .searchAera input {
 }
 #screen .pokeWrapper .pokeName button {
   border: none;
-  background-color: #e3e3e3;
+  background-color: inherit;
 }
 #screen .pokeWrapper .pokeName button:hover {
   text-decoration: underline;

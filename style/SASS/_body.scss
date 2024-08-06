@@ -37,13 +37,14 @@
         .pokeName {
             button {
                 border: none;
-                background-color: $bgc3;
+                background-color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
 
-            button:hover {
-                text-decoration: underline;
-                cursor: pointer;
-            }
         }
 
     }
